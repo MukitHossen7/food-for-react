@@ -1,10 +1,25 @@
+import { useState } from "react";
+import Cards from "./components/Cards/Cards";
+import Preparings from "./components/Preparings/Preparings";
 import Recipes from "./components/Recipes/Recipes";
+import { useEffect } from "react";
 
 const App = () => {
+  const [cards, setCards] = useState([]);
+  useEffect(() => {
+    fetch("recipe.json")
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+  }, []);
+
   return (
     <div className="w-11/12 mx-auto pt-10">
       {/* Recipes */}
       <Recipes></Recipes>
+      <div className="flex flex-col lg:flex-row gap-8 pt-10">
+        <Cards cards={cards}></Cards>
+        <Preparings></Preparings>
+      </div>
     </div>
   );
 };
