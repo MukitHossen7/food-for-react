@@ -1,7 +1,10 @@
+import Recipes from "./components/Recipes/Recipes";
+
 const App = () => {
   return (
-    <div>
-      <h1>Hello React</h1>
+    <div className="w-11/12 mx-auto pt-10">
+      {/* Recipes */}
+      <Recipes></Recipes>
     </div>
   );
 };
