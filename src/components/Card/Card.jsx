@@ -1,4 +1,4 @@
-const Card = ({ card }) => {
+const Card = ({ card, handleWantToCook }) => {
   const {
     recipe_img,
     recipe_name,
@@ -46,7 +46,10 @@ const Card = ({ card }) => {
             </div>
           </div>
           <div className="card-actions justify-start">
-            <button className="btn bg-[#0BE58A] px-6 font-bold text-slate-700 rounded-full py-1 ">
+            <button
+              onClick={() => handleWantToCook(card)}
+              className="btn bg-[#0BE58A] px-6 font-bold text-slate-700 rounded-full py-1 "
+            >
               Want to Cook
             </button>
           </div>
