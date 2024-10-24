@@ -9,6 +9,8 @@ const App = () => {
   const [cards, setCards] = useState([]);
   const [cooks, setCooks] = useState([]);
   const [currently, setCurrently] = useState([]);
+  const [times, setTimes] = useState(0);
+  const [calories, setCalories] = useState(0);
 
   useEffect(() => {
     fetch("recipe.json")
@@ -24,7 +26,7 @@ const App = () => {
       const newCooks = [...cooks, cookData];
       setCooks(newCooks);
     } else {
-      toast.error("Already added this item!", { autoClose: 1500 });
+      toast.warn("Already added this item!", { autoClose: 1500 });
     }
   };
 
@@ -36,6 +38,8 @@ const App = () => {
 
     setCooks(isRemaining);
     setCurrently(newCook);
+    setTimes((time) => time + cook.preparing_time);
+    setCalories((calorie) => calorie + cook.calories);
   };
 
   return (
@@ -48,6 +52,8 @@ const App = () => {
           cooks={cooks}
           handlePreparing={handlePreparing}
           currently={currently}
+          times={times}
+          calories={calories}
         ></Preparings>
         <ToastContainer />
       </div>

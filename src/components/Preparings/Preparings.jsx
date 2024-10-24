@@ -1,4 +1,4 @@
-const Preparings = ({ cooks, handlePreparing, currently }) => {
+const Preparings = ({ cooks, handlePreparing, currently, times, calories }) => {
   return (
     <div className="w-full lg:w-5/12">
       {/* Want to cook */}
@@ -25,8 +25,8 @@ const Preparings = ({ cooks, handlePreparing, currently }) => {
               <tr key={idx} className="hover text-sm">
                 <th>{idx + 1}</th>
                 <td>{cook.recipe_name}</td>
-                <td>{cook.preparing_time}</td>
-                <td>{cook.calories}</td>
+                <td>{cook.preparing_time} minutes</td>
+                <td>{cook.calories} calories</td>
                 <th>
                   <button
                     onClick={() => handlePreparing(cook)}
@@ -42,7 +42,7 @@ const Preparings = ({ cooks, handlePreparing, currently }) => {
       </div>
 
       {/* Currently cooking */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto pt-5">
         <div className="border-b border-slate-300 mx-3 lg:mx-10  text-center pb-4">
           <h2 className=" font-semibold text-2xl text-slate-700">
             Currently cooking: {currently.length}
@@ -64,11 +64,27 @@ const Preparings = ({ cooks, handlePreparing, currently }) => {
               <tr key={idx} className="hover">
                 <th>{idx + 1}</th>
                 <td>{current.recipe_name}</td>
-                <td>{current.preparing_time}</td>
-                <td>{current.calories}</td>
+                <td>{current.preparing_time} minutes</td>
+                <td>{current.calories} calories</td>
               </tr>
             ))}
           </tbody>
+        </table>
+      </div>
+
+      {/* Total */}
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr className="text-xs">
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Total times = {times} minutes</th>
+              <th>Total Calories = {calories} calories</th>
+            </tr>
+          </thead>
         </table>
       </div>
     </div>
