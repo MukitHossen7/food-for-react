@@ -10,7 +10,7 @@
       "200 g basil leaf",
       "400 g mushroom"
     ],
-    "preparing_time": "30 min",
+    "preparing_time": "30 minutes",
     "calories": "320 calories"
   },
   {
@@ -24,7 +24,7 @@
       "2 large eggs",
       "50 g parmesan cheese"
     ],
-    "preparing_time": "25 min",
+    "preparing_time": "25 minutes",
     "calories": "450 calories"
   },
   {
@@ -38,7 +38,7 @@
       "6 taco shells",
       "100 g lettuce"
     ],
-    "preparing_time": "20 min",
+    "preparing_time": "20 minutes",
     "calories": "380 calories"
   },
   {
@@ -52,7 +52,7 @@
       "150 g peas",
       "200 ml coconut milk"
     ],
-    "preparing_time": "40 min",
+    "preparing_time": "40 minutes",
     "calories": "290 calories"
   },
   {
@@ -66,7 +66,7 @@
       "1 lemon",
       "20 g fresh dill"
     ],
-    "preparing_time": "15 min",
+    "preparing_time": "15 minutes",
     "calories": "280 calories"
   },
   {
@@ -75,7 +75,7 @@
     "recipe_img": "https://i.ibb.co.com/dmCDsVr/polina-belova-0-A-Dlxlmgf-Q-unsplash.jpg",
     "short_description": "Fluffy pancakes served with syrup and fresh fruit.",
     "ingredients": ["200 g flour", "300 ml milk", "2 eggs", "30 g sugar"],
-    "preparing_time": "20 min",
+    "preparing_time": "20 minutes",
     "calories": "350 calories"
   }
 ]

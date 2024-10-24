@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const [cards, setCards] = useState([]);
   const [cooks, setCooks] = useState([]);
+  const [currently, setCurrently] = useState([]);
 
   useEffect(() => {
     fetch("recipe.json")
@@ -16,7 +17,7 @@ const App = () => {
   }, []);
 
   const handleWantToCook = (cookData) => {
-    const isHandleCook = cooks.some(
+    const isHandleCook = cooks.find(
       (cook) => cook.recipe_id === cookData.recipe_id
     );
     if (!isHandleCook) {
@@ -28,12 +29,15 @@ const App = () => {
   };
 
   const handlePreparing = (cook) => {
+    const newCook = [...currently, cook];
     const isRemaining = cooks.filter(
       (cookData) => cookData.recipe_id !== cook.recipe_id
     );
 
     setCooks(isRemaining);
+    setCurrently(newCook);
   };
+
   return (
     <div className="w-11/12 mx-auto pt-10">
       {/* Recipes */}
@@ -43,6 +47,7 @@ const App = () => {
         <Preparings
           cooks={cooks}
           handlePreparing={handlePreparing}
+          currently={currently}
         ></Preparings>
         <ToastContainer />
       </div>
